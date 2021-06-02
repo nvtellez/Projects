@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Get_Payment_Option</fullName>
+    <active>true</active>
+    <errorConditionFormula>Use_Card_on_File__c = False &amp;&amp;  Card_Number__c = NULL</errorConditionFormula>
+    <errorMessage>Please select a payment option, either use a card on file or enter the card information below.</errorMessage>
+</ValidationRule>

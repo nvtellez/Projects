@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <outboundMessages>
+        <fullName>Customer_Information</fullName>
+        <apiVersion>51.0</apiVersion>
+        <endpointUrl>https://outbound-message.herokuapp.com/obm</endpointUrl>
+        <fields>Email__c</fields>
+        <fields>Id</fields>
+        <fields>Last_Name__c</fields>
+        <fields>Name</fields>
+        <fields>State__c</fields>
+        <includeSessionId>false</includeSessionId>
+        <integrationUser>nathanvtellez@gmail.com</integrationUser>
+        <name>Customer Information</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>New Buyer Information</fullName>
+        <actions>
+            <name>Customer_Information</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Buyer__c.Name</field>
+            <operation>notEqual</operation>
+            <value>NULL</value>
+        </criteriaItems>
+        <triggerType>onCreateOnly</triggerType>
+    </rules>
+</Workflow>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Use_State_Abbreveation</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF(State__c &lt;&gt; NULL, LEN(State__c) &lt;&gt; 2, LEN(State__c) = 2)</errorConditionFormula>
+    <errorDisplayField>State__c</errorDisplayField>
+    <errorMessage>Please use the two letter abbreviation for your state</errorMessage>
+</ValidationRule>
